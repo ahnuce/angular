@@ -27,9 +27,17 @@
 <!-- view is controlled by myApp.controller model in app.js  -->
   <div class="container">
     <div ng-controller="mainController">
-      <h1>Hello world!</h1>
+      <h1>Hello {{ name }}!</h1>
+
+      <label>What is your twitter handle?</label>
+      <input type="text" ng-model="handle" />
+      <hr />
+      <h1>twitter.com/{{  lowercasehandle() }}</h1>
     </div>
-  </div>  <!-- load jquery -->
+  </div>
+
+
+  <!-- load jquery -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
