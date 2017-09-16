@@ -27,15 +27,15 @@ myApp.service('nameService', function(){
 });
 
 myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService){
-    
-    $scope.name = nameService.name;
-    
-    $scope.$watch('name', function(){
-        nameService.name = $scope.name;
-    });
-    
-    $log.log(nameService.name);
-    $log.log(nameService.namelength());
+//    
+//    $scope.name = nameService.name;
+//    
+//    $scope.$watch('name', function(){
+//        nameService.name = $scope.name;
+//    });
+//    
+//    $log.log(nameService.name);
+//    $log.log(nameService.namelength());
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService){
@@ -49,7 +49,16 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameSer
     $scope.num = $routeParams.num;
 }]);
 
-
+myApp.directive("searchResult", function(){
+    return {
+        template:  '<a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Doe, John</h4>
+    <p class="list-group-item-text">
+    12 Fairmount ave., Johnston, RI  
+    </p>
+  </a>'
+    }
+});
 
 
 
